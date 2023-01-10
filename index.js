@@ -1,20 +1,21 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require ("fs");
-const README = ({title, description, installation, usage, credits, license, features}) =>
-`#${title}
-##Description
-${description}
-##Installation
-${installation}
-##Usage
-${usage}
-##Credits
-${credits}
-##License
-${license}
-##Features
-${features}`
+const fileGenerator = require("./generateMarkdown.js")
+// const README = ({title, description, installation, usage, credits, license, features}) =>
+// `#${title}
+// ##Description
+// ${description}
+// ##Installation
+// ${installation}
+// ##Usage
+// ${usage}
+// ##Credits
+// ${credits}
+// ##License
+// ${license}
+// ##Features
+// ${features}`
 // TODO: Create an array of questions for user input
 const questions = [{
     type: 'input',
@@ -38,6 +39,11 @@ const questions = [{
 },
 {
     type: 'input',
+    message: 'relative path to your image',
+    name: 'img',
+},
+{
+    type: 'input',
     message: 'what resources did you use and who helped you?',
     name: 'credits',
 },
@@ -53,13 +59,13 @@ const questions = [{
 }]
 inquirer
     .prompt(questions)
-// .then((answers) => {
-//     const htmlContent = html(answers)
-//     fs.appendFile("index.html", JSON.stringify(answers), error =>{
-//     !error ? console.log('success!')
-//     : console.log('an error occured')
-//     })
-// })
+.then((answers) => {
+    const readMe = fileGenerator(answers)
+    fs.writeFile("./readMe.md", readMe, error =>{
+    !error ? console.log('success!')
+    : console.log('an error occured')
+    })
+})
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
