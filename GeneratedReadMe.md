@@ -1,5 +1,5 @@
 # asdf
-  
+  [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
   ## Table of Contents
   - [Description](#Description)
   - [Installation](#Installation)
@@ -18,7 +18,8 @@
 
   ## Usage
   asdf
-  asdf
+
+  <img src="./Develop\images\Screenshot (12).png" alt="readme generator" width="400" height="200"/>
 
   ## Tests
   asdf
@@ -27,11 +28,12 @@
   asdf
 
   ## License
-  none
+  BSD 3-clause
 
   ## Features
-  asdf
+  sadf
 
   ## Questions
-  sadf
-  sadf
+  asdf
+  
+  asdf
